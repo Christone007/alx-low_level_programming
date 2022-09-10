@@ -11,16 +11,12 @@ int main(void)
 	int a, b, c, d, num1, num2;
 
 	a = '0';
-
 	while (a <= '9')
-	{
-		b = '0';
+	{b = '0';
 		while (b <= '9')
-		{
-			c = '0';
+		{c = '0';
 			while (c <= '9')
-			{
-				d = '0';
+			{d = '0';
 				while (d <= '9')
 				{
 					num1 = (a * 10) + b;
@@ -46,14 +42,10 @@ int main(void)
 				c++;
 
 			}
-
 			b++;
-
 		}
 		a++;
-
 	}
 	putchar('\n');
-
 	return (0);
 }
