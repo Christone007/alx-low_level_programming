@@ -20,7 +20,7 @@ int main(void)
 			c = '0';
 			while (c <= '9')
 			{
-				d = '1';
+				d = '0';
 				while (d <= '9')
 				{
 					num1 = (a * 10) + b;
