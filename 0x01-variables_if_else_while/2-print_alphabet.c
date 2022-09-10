@@ -10,8 +10,16 @@ int main(void)
 {
 	char c;
 
-	c = '141';
-	while (c <= 172)
-		{
+	c = 'a';
+	while (c <= 'z')
+	{
+		putchar(c);
+		c++;
+	}
+	putchar('\n');
+	
+	return (0);
+}
+
 
 
