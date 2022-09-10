@@ -13,7 +13,7 @@ int main(void)
 	hexa = '0';
 	hexa2 = 'a';
 
-	while (hexa < '9')
+	while (hexa <= '9')
 	{
 		putchar(hexa);
 		hexa++;
