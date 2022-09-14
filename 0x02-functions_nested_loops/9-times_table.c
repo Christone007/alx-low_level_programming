@@ -12,18 +12,14 @@ void times_table(void)
 
 	n = 0;
 	while (n < 10)
-	{
-		m = 0;
+	{m = 0;
 		while (m < 10)
-		{
-			prod = n * m;
-
+		{prod = n * m;
 			a = prod / 10;
 			b = prod % 10;
 
 			if (m == 0)
-			{
-				_putchar(prod + '0');
+			{_putchar(prod + '0');
 			}
 			else
 			{
@@ -34,20 +30,17 @@ void times_table(void)
 			_putchar(b + '0');
 			}
 			else
-			{
-				_putchar(' ');
+			{_putchar(' ');
 				_putchar(a + '0');
 				_putchar(b + '0');
 
 			}
 			}
 			if (m == 9)
-			{
-				_putchar('\n');
+			{_putchar('\n');
 			}
 			else
-			{
-			_putchar(',');
+			{_putchar(',');
 			}
 			m++;
 		}
