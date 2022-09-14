@@ -9,7 +9,7 @@
  */
 int _islower(int c)
 {
-char n =(char)c;
+char n = c;
 
 if (n >= 97 && n <= 112)
 {
