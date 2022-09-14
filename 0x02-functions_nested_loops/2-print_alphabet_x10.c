@@ -8,13 +8,12 @@
 void print_alphabet_x10(void)
 {
 	int n = 0;
+
 	while (n < 10)
 	{
 	print_alphabet();
 	n++;
 	}
-
-	return;
 }
 
 /**
@@ -23,13 +22,14 @@ void print_alphabet_x10(void)
  * Description: Print the alphabet in lowercase
  * Return: void
  */
-void print_alphabet(void){
+void print_alphabet(void)
+{
 	char n = 'a';
+
 	while (n <= 'z')
 	{
 		_putchar(n);
-	       	n++;
+		n++;
 	}
 	_putchar('\n');
-	return;
 }
