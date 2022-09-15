@@ -9,12 +9,12 @@
 int main(void)
 {
 	long int i, a, b, c1;
-	
+
 	a = 1;
 	b = 2;
 	i = 0;
 
-	printf("%ld, %ld\n", a, b);
+	printf("%ld, %ld ,", a, b);
 
 	while (i < 48)
 	{
