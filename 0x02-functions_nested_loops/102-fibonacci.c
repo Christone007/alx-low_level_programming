@@ -22,10 +22,14 @@ int main(void)
 		a = b;
 		b = c1;
 
-		printf("%ld, ", b);
+		if (i != 47)
+			printf("%ld, ", b);
+		else
+			printf("%ld", b);
 
 		i++;
 	}
+	putchar('\n');
 
 	return (0);
 }
