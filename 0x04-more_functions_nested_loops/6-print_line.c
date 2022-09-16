@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * print_line - Print a line on the terminal
- * @n: The number of underscores to use to 
- * create the line
- *
- * Return: void
- */
+* print_line - Print a line on the terminal
+* @n: The number of underscores to use to
+* create the line
+*
+* Return: void
+*/
 void print_line(int n)
 {
 	int i;
