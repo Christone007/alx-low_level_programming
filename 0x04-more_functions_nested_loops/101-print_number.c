@@ -16,12 +16,12 @@ void print_number(int n)
 		_putchar('-');
 		num = n * (-1);
 	}
-	
+
 	else
 	{
 		num = n;
 	}
-	
+
 	if (num >= 10)
 	{
 		divider = 10;
@@ -35,7 +35,7 @@ void print_number(int n)
 	{
 		divider = 1;
 	}
-	
+
 	while (divider >= 1)
 	{
 		digit = num / divider;
