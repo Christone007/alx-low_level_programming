@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * modulo - Removes the - from a negative number;
@@ -61,11 +62,28 @@ void print_number(int n)
 	if (n < 0)
 	{
 		_putchar('-');
+		num = n * (-1);
 	}
-
-	num = modulo(n);
-	divider = get_first_divider(num);
-
+	
+	else
+	{
+		num = n;
+	}
+	
+	if (num >= 10)
+	{
+		divider = 10;
+		while (divider <= num)
+		{
+			divider *= 10;
+		}
+		divider /= 10;
+	}
+	else
+	{
+		divider = 1;
+	}
+	
 	while (divider >= 1)
 	{
 		digit = num / divider;
