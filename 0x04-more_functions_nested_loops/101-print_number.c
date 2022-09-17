@@ -8,7 +8,7 @@
  */
 void print_number(int n)
 {
-	static int divider, num;
+	static unsigned int divider, num;
 	int digit;
 
 	if (n < 0)
