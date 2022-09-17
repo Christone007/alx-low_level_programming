@@ -9,7 +9,7 @@
 void print_number(int n)
 {
 	static unsigned int divider, num;
-	int digit;
+	unsigned int digit;
 
 	if (n < 0)
 	{
@@ -24,7 +24,7 @@ void print_number(int n)
 
 	if (num >= 10)
 	{
-		divider = 10;
+		divider = 1;
 		while (divider <= num)
 		{
 			divider *= 10;
