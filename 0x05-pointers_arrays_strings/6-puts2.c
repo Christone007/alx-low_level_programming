@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _puts - Print every other character of a
+ * puts - Print every other character of a
  * string followed by a new line
  * @str: The string to be printed
  *
@@ -21,6 +21,7 @@ void puts2(char *str)
 		}
 		else
 		{
+			_putchar(*(str + i));
 			i++;
 		}
 	}
