@@ -8,16 +8,15 @@
  */
 int _atoi(char *s)
 {
-	unsigned int i, j, pos, neg;
+	unsigned int pos, neg;
 	char *num;
 	unsigned int num2;
 
 	pos = 0;
 	neg = 0;
-	j = 0;
 	/*Iterate through the elements of the string*/
 	/*count the signs*/
-	i = 0;
+
 	while (*s < '0' || *s > '9')
 	{
 		if (*s == '+')
@@ -33,6 +32,8 @@ int _atoi(char *s)
 	num = s;
 	num2 = *num - '0';
 	num++;
+
+	/*Fetch the digits with sign correction*/
 	while (*num >= '0' && *num <= '9')
 	{
 		num2 = (num2 * 10) + (*num - '0');
