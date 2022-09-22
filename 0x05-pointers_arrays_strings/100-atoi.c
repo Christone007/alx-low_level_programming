@@ -28,11 +28,10 @@ int _atoi(char *s)
 			neg++;
 		}
 		s++;
+		if (*s == '\0')
+			return (0);
 	}
 	num = s;
-
-	if (*num == '\0')
-		return (0);
 
 	num2 = *num - '0';
 	num++;
