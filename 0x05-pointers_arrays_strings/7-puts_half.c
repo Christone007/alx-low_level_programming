@@ -11,11 +11,11 @@ void puts_half(char *str)
 	int len, to_print;
 
 	len = 0;
-	while(str[len] != '\0')
+	while (str[len] != '\0')
 	{
 		len++;
-	}	
-	
+	}
+
 	if (len % 2 == 1)
 	{
 		to_print = (len / 2) + 1;
