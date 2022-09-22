@@ -30,6 +30,10 @@ int _atoi(char *s)
 		s++;
 	}
 	num = s;
+
+	if (*num == '\0')
+		return (0);
+
 	num2 = *num - '0';
 	num++;
 
@@ -39,7 +43,7 @@ int _atoi(char *s)
 		num2 = (num2 * 10) + (*num - '0');
 		num++;
 	}
-	if (neg > pos)
+	if (neg % 2 == 1)
 	{
 		num2 *= -1;
 	}
