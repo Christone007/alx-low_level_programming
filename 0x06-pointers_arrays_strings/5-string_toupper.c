@@ -7,13 +7,13 @@
  *
  * Return: a pointer to the string
  */
- char *string_toupper(char *str)
+char *string_toupper(char *str)
 {
 	unsigned int i;
 	int temp;
 
 	i = 0;
-	while ( str[i] != '\0')
+	while (str[i] != '\0')
 	{
 		temp = 0;
 		if (str[i] >= 'a' && str[i] <= 'z')
