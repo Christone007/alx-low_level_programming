@@ -17,7 +17,6 @@ int main(void)
     ptr = _strcat(s1, s2);
     printf("%s", s1);
     printf("%s", s2);
-    printf("Penultimate line\n");
     printf("%s", ptr);
     return (0);
 }
