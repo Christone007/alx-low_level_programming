@@ -50,6 +50,7 @@ char *cap_string(char *s)
 		if (s[i] == '\t')
 		{
 			s[i] = ' ';
+			s[i + 1] = _capitalize(s[i + 1]);
 		}
 
 		j = 0;
