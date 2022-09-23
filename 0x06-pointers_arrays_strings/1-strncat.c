@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * strncat - Concatenate @n characters of @src to @dest
- * @dest: The string to be appended
- * @src: The string to be copied from
- * @n: The number of bytes to concatenate
- *
- * Return: pointer to @dest
- */
+* _strncat - Concatenate n characters of src to dest
+* @dest: The string to be appended
+* @src: The string to be copied from
+* @n: The number of bytes to concatenate
+*
+* Return: pointer to @dest
+*/
 char *_strncat(char *dest, char *src, int n)
 {
 	int i, dest_len;
