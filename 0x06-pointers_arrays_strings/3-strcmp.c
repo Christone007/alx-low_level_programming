@@ -30,11 +30,11 @@ int _strcmp(char *s1, char *s2)
 	l1 = getStringLength(s1);
 	l2 = getStringLength(s2);
 
-	if(l1 > l2)
-		return (1);
-	else if(l1 == l2)
+	if (l1 > l2)
+		return (15);
+	else if (l1 == l2)
 		return (0);
 	else
-		return (-1);
+		return (-15);
 }
 
