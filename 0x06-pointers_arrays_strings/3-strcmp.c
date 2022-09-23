@@ -11,6 +11,9 @@ int getStringLength(char *s)
 	int len;
 
 	len = 0;
+
+	if (s[0] == 0 + '0')
+		return (0);
 	while (s[len] != '\0')
 		len++;
 	return (len);
