@@ -6,9 +6,9 @@
  *
  * Return: the length of the string as int
  */
-int getStringLength(char *s)
+unsigned int getStringLength(char *s)
 {
-	int len;
+	unsigned int len;
 
 	len = 0;
 
@@ -28,7 +28,7 @@ int getStringLength(char *s)
  */
 int _strcmp(char *s1, char *s2)
 {
-	int l1, l2;
+	unsigned int l1, l2;
 
 	l1 = getStringLength(s1);
 	l2 = getStringLength(s2);
