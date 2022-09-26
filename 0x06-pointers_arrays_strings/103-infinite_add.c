@@ -1,6 +1,4 @@
 #include "main.h"
-#include <stdio.h>
-#include <string.h>
 
 /**
  * getLength - get the length of a variable pointed to
@@ -29,10 +27,10 @@ unsigned int getLength(char *s)
  * @r: The buffer to hold the result
  * @size_r: The size of the buffer in bytes
  *
- * Return: a pointer to the sum stored in the buffer or 0 if 
+ * Return: a pointer to the sum stored in the buffer or 0 if
  * the buffer is too small to hold sum
  */
-char * infinite_add(char *n1, char *n2, char *r, int size_r)
+char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int n1_len;
 	int n2_len;
@@ -42,7 +40,7 @@ char * infinite_add(char *n1, char *n2, char *r, int size_r)
 	char carry;
 	int res_len;
 
-	char *res = r + size_r -1;
+	char *res = r + size_r - 1;
 	*res = 0;
 
 	n1_len = getLength(n1);
@@ -58,7 +56,7 @@ char * infinite_add(char *n1, char *n2, char *r, int size_r)
 		sum = ((n1_end > n1) ? *(--n1_end) : '0')
 			+ ((n2_end > n2) ? *(--n2_end) : '0')
 			+ carry - '0';
-		
+
 		carry = sum > '9';
 		if (carry)
 		{
@@ -72,17 +70,16 @@ char * infinite_add(char *n1, char *n2, char *r, int size_r)
 
 		*(--res) = sum;
 	}
-	if(carry)
+	if (carry)
 	{
 		*(--res) = '1';
 	}
 
 	res_len = getLength(res);
 
-	printf("res: %d, buffer: %d\n", res_len, size_r);
 	if (res_len > size_r - 1)
 	{
-		return(0);
+		return (0);
 	}
 
 	return (res);
