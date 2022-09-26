@@ -32,13 +32,8 @@ unsigned int getLength(char *s)
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int n1_len;
-	int n2_len;
-	char *n1_end;
-	char *n2_end;
-	char sum;
-	char carry;
-	int res_len;
+	int n1_len, n2_len, res_len;
+	char *n1_end, *n2_end, sum, carry;
 
 	char *res = r + size_r - 1;
 	*res = 0;
@@ -59,9 +54,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 		carry = sum > '9';
 		if (carry)
-		{
 			sum -= 10;
-		}
 		if (sum > '9')
 		{
 			sum = '0';
@@ -71,16 +64,12 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		*(--res) = sum;
 	}
 	if (carry)
-	{
 		*(--res) = '1';
-	}
 
 	res_len = getLength(res);
 
 	if (res_len > size_r - 1)
-	{
 		return (0);
-	}
 
 	return (res);
 }
