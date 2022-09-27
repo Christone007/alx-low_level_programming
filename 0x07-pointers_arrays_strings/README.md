@@ -6,7 +6,10 @@
  > char *_memset(char *s, char b, unsigned int n);
 1. Memcpy 
  A function that copies an area of memory to another  
- > char *_memcpy(char *dest, char *src, unsigned int n);
+ > char *_memcpy(char *dest, char *src, unsigned int n);  
+2. Strchr  
+ A function that iterates through a string to find a character
+ > char *_strchr(char *s, char c);
 
 ### Resources
 
