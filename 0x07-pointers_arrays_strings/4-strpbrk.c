@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * strpbrk - Locate the first occurrence of any of the bytes
+ * _strpbrk - Locate the first occurrence of any of the bytes
  * in a search string.
  * @s: The string to be searched
  * @accept: The string containing bytes to search for
@@ -28,7 +28,7 @@ char *_strpbrk(char *s, char *accept)
 			}
 			j++;
 		}
-		if(match)
+		if (match)
 			return (s);
 		s++;
 	}
