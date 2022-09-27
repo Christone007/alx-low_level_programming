@@ -5,8 +5,14 @@
  A function that fills memory with a constant byte
  > char *_memset(char *s, char b, unsigned int n);
 1. Memcpy 
+ A function that copies an area of memory to another  
+ > char *_memcpy(char *dest, char *src, unsigned int n);
 
 ### Resources
 
 ### My thoughts
 * What would one need an array of more than 3 dimensions for?
+* When a pointer is incremented using **++**, then the actual
+position of the original pointer also changes. However, using
+the ***(ptr + i)** format enables us to iterate accross memory
+without altering the original pointer position
