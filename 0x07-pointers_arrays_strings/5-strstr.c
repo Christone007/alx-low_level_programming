@@ -1,36 +1,18 @@
-#include <stdio.h>
+#include "main.h"
 
 char *_strstr(char *haystack, char *needle)
 {
-	char *a;
-	char *b;
+	int i, j;
 
-	b = needle;
-
-	if (*b == 0)
+	for (i = 0; haystack[i] != '\0'; i++)
 	{
-		return (char *) haystack;
-	}
-	
-	for ( ; *haystack != 0; haystack += 1)
-	{
-		if (*haystack != *b)
+		for (j = 0; needle[j] != '\0'; j++)
 		{
-			continue;
-		}
-		a = haystack;
-		while (1)
-		{
-			if (*b == 0)
-			{
-				return (char *) haystack;
-			}
-			if (*a++ != *b++)
-			{
+			if (haystack[i + j] != needle[j])
 				break;
-			}
 		}
-		b = needle;
+		if (!needle[j])
+			return (&haystack[i]);
 	}
-	return (b);
+	return NULL;
 }
