@@ -14,6 +14,9 @@ char *_strpbrk(char *s, char *accept)
 	unsigned int j;
 	int match;
 
+	if ((s == NULL) || (accept == NULL))
+		return NULL;
+
 	match = 0;
 
 	while (*s != '\0')
