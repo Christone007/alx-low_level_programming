@@ -1,16 +1,16 @@
 # ALL ABOUT RECURSIONS IN C
 
-### Objective  
+## Objective  
 * Gain full understanding of the concept of recursoions in C
 * Use recursions to solve problems
 
-### Tasks  
+## Tasks  
 * Task 0: Print a string followed by a new line
 * Task 1: Print a string in reverse  
 * Task 2: Calculate the length of a string
 * Task 3: Calculate Factorial
 
-### Task Quotes  
+## Task Quotes  
 0. She locked away a secret, deep **inside herself**,
 something she once knew to be true... but chose to forget.
 
@@ -24,9 +24,9 @@ in my dreams we are together.
 
 
 
-### Resources
+## Resources
 
-### My Thoughts
+## My Thoughts
 At first I feared the concept of Recursions... but then,
 I believe I would understand it better by providing coming
 up with answers to these tasks myself and seeking help 
