@@ -5,8 +5,7 @@
  * @n: The number whose square root should be found
  * @d: The divider
  *
- * Return: The sqare root of @n, or -1 if @n is not a
- * perfect square
+ * Return: The sqare root of @n, or -1 if @n is not a perfect square
  */
 int _sqrt_helper(int n, int d)
 {
@@ -23,7 +22,7 @@ int _sqrt_helper(int n, int d)
  * @n: The number whose squre root is to be found
  *
  * Return: The square root of @n, or (-1) if @n is not
- a perfect square
+ * a perfect square
  */
 int _sqrt_recursion(int n)
 {
