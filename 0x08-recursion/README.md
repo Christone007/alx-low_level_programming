@@ -5,11 +5,15 @@
 * Use recursions to solve problems
 
 ### Tasks  
-* Task 0: 
+* Task 0: Print a string followed by a new line
+* Task 1: Print a string in reverse
 
 ### Task Quotes  
 0. She locked away a secret, deep **inside herself**,
 something she once knew to be true... but chose to forget.
+
+1. Why is it so important to dream? Because,
+in my dreams we are together.
 
 
 ### Resources
