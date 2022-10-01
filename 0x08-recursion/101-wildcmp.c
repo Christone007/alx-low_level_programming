@@ -7,7 +7,6 @@
   */
 int wildcmp(char *s1, char *s2)
 {
-	static int wild = 1;
 	/*we reach end of s1, and s2 is not a wildcard.
 	  if its also end of s2, then match, otherwise,
 	  no match*/
@@ -24,7 +23,7 @@ int wildcmp(char *s1, char *s2)
 	 if its not end of s2, then move s2 forward*/
 	if (*s2 == '*')
 	{
-		wild = 2;
+		/*wild = 2;*/
 		if (*(s2 + 1) == '\0')
 		{
 			return (1);
@@ -52,8 +51,8 @@ int wildcmp(char *s1, char *s2)
 			{
 				if (*(s1 + 1) != *(s2 + 1))
 				{
-					if (wild == 2)
-						return (wildcmp(s1 + 1, s2));
+					/*if (wild == 2)*/
+						/*return (wildcmp(s1 + 1, s2));*/
 					return (0);
 				}
 				else
