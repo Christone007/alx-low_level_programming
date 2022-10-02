@@ -2,7 +2,7 @@
 
 ## Introduction
 Programs become more useful when we can pass values into them
-to modify their behaviour. The main function of every program
+to modify their behaviour. The **_main_** function of every program
 can also receive arguments from the command line at invocation.
 
 Options are also CLI arguments. The tasks that follow ensure 
@@ -33,8 +33,8 @@ string arguments to integers.
 * Debugging is really tough. Spent a lot of time trying to find a bug
 which was leading to a segmentation fault.  
 * Solving a complex problem starts with the following:  
- * Calm the mind down
- * Get pencil and paper
- * Think about how to solve the problem
- * Pseudocode
- * Then code and debug
+  * Calm the mind down
+  * Get pencil and paper
+  * Think about how to solve the problem
+  * Pseudocode
+  * Then code and debug
