@@ -10,12 +10,14 @@ enough practice with this concept in C programming language.
 
 ## Tasks
 0. Write a program that prints its name.  
-1. Write a program that prints the number of arguments passed to it.
+1. Write a program that prints the number of arguments passed to it.  
+2. Write a program that prints all the arguments it receives.
 
 ## Task Quotes
 Task 0: It ain't what they call you, it's what you answer to  
 Task 1: Silence is argument carried out by other means  
-Task 2:
+Task 2: The best argument against democracy is a five-minute conversation with the average voter  
+Task 3:
 
 ## Resources
 
