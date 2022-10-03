@@ -16,3 +16,4 @@ used. A library prevents us from re-inventing the wheel.
 1. Without libraries what have we? We have no past and no future
 
 ## My Thoughts
+Shell scripts are powerful. It seems there's no task I cannot automate.
