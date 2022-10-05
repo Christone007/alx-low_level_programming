@@ -37,7 +37,7 @@ char *_strdup(char *str)
 	char *newptr;
 
 	if (!str)
-		return NULL;
+		return (NULL);
 
 	memsize = sizeof(char) * getLength(str);
 	newptr = malloc(memsize);
