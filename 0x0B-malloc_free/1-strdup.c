@@ -36,6 +36,9 @@ char *_strdup(char *str)
 	unsigned long int i, memsize;
 	char *newptr;
 
+	if (!str)
+		return NULL;
+
 	memsize = sizeof(char) * getLength(str);
 	newptr = malloc(memsize);
 
