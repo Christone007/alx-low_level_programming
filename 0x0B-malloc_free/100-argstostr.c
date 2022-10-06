@@ -6,9 +6,9 @@
  *
  * Return: length of string
  */
-unsigned int getLength(char *s)
+int getLength(char *s)
 {
-	unsigned int i;
+	int i;
 
 	i = 0;
 
