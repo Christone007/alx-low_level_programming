@@ -45,7 +45,7 @@ char *argstostr(int ac, char **av)
 	}
 
 
-	ptr = malloc(sizeof(char) * tl);
+	ptr = malloc(sizeof(char) * (tl + 1));
 
 	if (ptr == NULL)
 		return (NULL);

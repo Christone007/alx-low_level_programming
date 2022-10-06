@@ -106,7 +106,7 @@ char **strtow(char *str)
 		}
 		/*printf("\nFinal point, moving to next word...\n");*/
 		i++;
-	}	
+	}
 	/*printf("Outside the wc loop");*/
 	return ptr1;
 }
