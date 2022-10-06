@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * getLength - Get string length
@@ -24,7 +23,7 @@ unsigned int getLength(char *s)
 /**
  * argstostr - Concatenates all the arguments of a program
  * @ac: The Argument count
- * @av; The Argument vector
+ * @av: The Argument vector
  *
  * Return: a string concatenation of arguments
  */
@@ -65,6 +64,5 @@ char *argstostr(int ac, char **av)
 		ptr[k++] = '\n';
 		i++;
 	}
-
 	return (ptr);
 }
