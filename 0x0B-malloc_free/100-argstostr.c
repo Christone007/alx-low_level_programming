@@ -44,7 +44,11 @@ char *argstostr(int ac, char **av)
 		i++;
 	}
 
-
+/* allocate memory for
+ * 1. The total length of the concatenated string (tl)
+ * 2. The '\n' at the end of each string (ac)
+ * 3. The last string terminator (1)
+ */
 	ptr = malloc(sizeof(char) * (tl + ac + 1));
 
 	if (ptr == NULL)
