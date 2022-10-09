@@ -32,6 +32,6 @@ allocating memory for any program, we must ensure to account for every single by
 
 * Big problems are solved using the divide and conquer strategy. Task 6 was one heck of a challenge. I took some time off, then returned, thought about the 
 problem, solved it on paper using a divide and conquer approach... then I wrote the code... Debugged it and voila!
+
 ## New Learning
-1. An **array of strings** is pointed to with a Double pointer  
-2. 
+1. An **array of strings** is pointed to with a Double pointer 
