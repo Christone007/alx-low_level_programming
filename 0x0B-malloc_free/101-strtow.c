@@ -127,11 +127,16 @@ char **strtow(char *str)
 	unsigned int wc;
 	char **ptr;
 
+	/*initial validation*/
+	if (str == NULL || *str == '\0')
+		return (NULL);
 	/*Count the words in the string*/
 	wc = cword(str);
 
 	/*Allocate memory to hold the words*/
 	ptr = malloc(sizeof(char *) * (wc + 1));
+	if (ptr == NULL)
+		return (NULL);
 
 
 	/*Allocate memory for the chars of each word*/
