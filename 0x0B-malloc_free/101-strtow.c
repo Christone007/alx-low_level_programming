@@ -31,9 +31,13 @@ unsigned int cword(char *s)
  * @p: A pointer to the array of strings
  * @s: The pointer to the original string
  *
- * Description: Allocates enough memory space to hold words which are directly split out from a string. The address of each word memory allocation is saved to the array
+ * Description: Allocates enough memory space to hold
+ * words which are directly split out from a string.
+ * The address of each word memory allocation is saved
+ * to the array
  *
- * Return: A Pointer to an array of string memory, not yet initialized. NULL if error
+ * Return: A Pointer to an array of string memory,
+ * not yet initialized. NULL if error
  */
 char **memword(char **p, char *s)
 {
@@ -77,7 +81,8 @@ char **memword(char **p, char *s)
  * @wc: The number of space-seperated words in the string
  * @ptr: A pointer to an array of strings which would hold the words
  *
- * Description: The words are culled out of a string and used to populate already-allocated memory spaces in @ptr
+ * Description: The words are culled out of a string and used
+ * to populate already-allocated memory spaces in @ptr
  *
  * Return: A pointer to the array of strings. NULL on error of failure
  */
@@ -132,6 +137,8 @@ char **strtow(char *str)
 		return (NULL);
 	/*Count the words in the string*/
 	wc = cword(str);
+	if (wc == 0)
+		return (NULL);
 
 	/*Allocate memory to hold the words*/
 	ptr = malloc(sizeof(char *) * (wc + 1));
