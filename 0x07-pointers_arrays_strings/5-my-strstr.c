@@ -10,25 +10,11 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	unsigned int j;
+	printf("what we got: %s and %s\n", haystack, needle);
 
-	while (*haystack != '\0')
-	{
-		if (*haystack == *needle)
-		{
-			j = 0;
-			while (*(haystack + j) == *(needle + j))
-			{
-				if (*(needle + (j + 1)) == '\0')
-				{
-					return (haystack);
-				}
-				j++;
-			}
-		}
-		haystack++;
-	}
+	printf("We would try to dereference Haystack and needle\n");
 
-	return NULL;
+	printf("Haystack[0]: %c, needle[0]: %c", *haystack, *needle);
 
+	return (NULL);
 }

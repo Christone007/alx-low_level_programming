@@ -9,10 +9,12 @@
 int main(void)
 {
     char *s = "First, solve the problem. Then, write the code.";
-    char *f = "xy";
+    char *f = "profd";
     char *t;
 
     t = _strstr(s, f);
+
     printf("%s\n", t);
+
     return (0);
 }
