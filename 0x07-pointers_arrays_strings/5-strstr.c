@@ -1,11 +1,24 @@
 #include "main.h"
 
+/**
+ * _strstr - Finds the first occurence of a certain
+ * string in another string
+ * @haystack: Pointer to the base string
+ * @needle: The string to be searched for
+ *
+ * Return: Pointer to first occurence of @needle in @haystack
+ * or NULL if not found or error
+ */
+
 char *_strstr(char *haystack, char *needle)
 {
 	unsigned int i;
 
-	if (*needle == '\0' || !needle)
+	if (!needle)
 		return (NULL);
+
+	if (*needle == '\0')
+		return (haystack);
 
 	while (*haystack != '\0')
 	{
