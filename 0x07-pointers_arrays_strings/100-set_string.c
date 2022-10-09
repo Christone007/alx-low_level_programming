@@ -9,13 +9,5 @@
  */
 void set_string(char **s, char *to)
 {
-	char *a, *b;
-
-	a = *s;
-	b = to;
-
-
-
-	printf("%s\n", a);	
-	printf("%s\n", b);
+	 *s = to;
 }
