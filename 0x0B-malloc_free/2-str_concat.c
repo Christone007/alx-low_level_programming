@@ -13,7 +13,7 @@ unsigned long int getLength(char *s)
 
 	i = 0;
 
-	if (!s)
+	if (s == NULL || !s)
 		return (0);
 	while (s[i] != '\0')
 	{
