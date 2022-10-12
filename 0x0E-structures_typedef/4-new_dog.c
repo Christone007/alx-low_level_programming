@@ -1,5 +1,8 @@
 #include "dog.h"
 
+
+
+
 /**
  * new_dog - Creates a new dog
  * @name: The name of the dog
@@ -16,7 +19,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	if (dog == NULL)
 	{
-		free(dog);
+		free(name);
+		free(owner);
 		return (NULL);
 	}
 
