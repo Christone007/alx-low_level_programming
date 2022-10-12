@@ -2,6 +2,7 @@
 #define DOG_H
 
 /*Libraries*/
+#include <stdio.h>
 #include <stdlib.h>
 
 /**
@@ -21,4 +22,5 @@ struct dog
 
 /*Function prototypes*/
 void init_dog(struct dog *d, char *name, float age, char *owner);
+void print_dog(struct dog *d);
 #endif /*DOG_H*/

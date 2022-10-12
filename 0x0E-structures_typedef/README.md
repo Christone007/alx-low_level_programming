@@ -10,9 +10,11 @@ declare the data type it represents.
 
 ## Tasks
 0. Define a new type _struct dog  
-1. Write a function that initialize a variable of type struct dog
+1. Write a function that initialize a variable of type struct dog  
+2. Write a function that prints a struct dog
 
 ## Task Quotes
 1. A dog is the only thing on earth that loves you more than you love yourself
+2. A dog will teach you unconditional love. If you can have that in your life, things won't be too bad
 
 ## Extras
