@@ -9,7 +9,11 @@
 void print_dog(struct dog *d)
 {
 	if (d == NULL || !d)
+	{
+
+		printf("");
 		return;
+	}
 
 	if (d->name == NULL)
 		printf("Name: (nil)\n");
