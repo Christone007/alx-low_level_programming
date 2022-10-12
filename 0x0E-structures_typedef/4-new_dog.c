@@ -1,7 +1,7 @@
 #include "dog.h"
 
 /**
- * _strlen - Calculates the length of a string 
+ * _strlen - Calculates the length of a string
  * @str: The string
  *
  * Return: The length of the string excluding the terminal null byte
