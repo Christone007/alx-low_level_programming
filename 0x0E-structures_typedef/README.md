@@ -9,8 +9,10 @@ for a data type, such that the new name can subsequently be used to
 declare the data type it represents.
 
 ## Tasks
-0. Define a new type _struct dog_
+0. Define a new type _struct dog  
+1. Write a function that initialize a variable of type struct dog
 
 ## Task Quotes
+1. A dog is the only thing on earth that loves you more than you love yourself
 
 ## Extras
