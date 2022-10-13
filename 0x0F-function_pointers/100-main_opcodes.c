@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	if (nbytes < 0)
 	{
 		printf("Error\n");
-		return (1);
+		return (2);
 	}
 
 	ptr = (unsigned char *)main;
