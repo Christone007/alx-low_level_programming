@@ -12,13 +12,21 @@ int main(int argc, char *argv[])
 	int a, b;
 	int (*calc)(int, int);
 
+/*	int i;
+*	i = 0;
+*	while (i < argc)
+*	{
+*		printf("Argv[%d] is %s\n", i, argv[i]);
+*		i++;
+*	}
+*/
 	if (argc != 4)
 	{
 		printf("Error\n");
 		return (98);
 	}
 
-	if (strlen(argv[2]) != 1)
+	if (*argv[2] == "."[0] || strlen(argv[2]) != 1)
 	{
 		printf("Error\n");
 		return (99);
