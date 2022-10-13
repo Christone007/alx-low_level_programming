@@ -6,8 +6,10 @@ to modify output. The can make a single function behave in different
 ways.
 
 ## Tasks
-0. Write a function that prints a name
+0. Write a function that prints a name  
+1. Write a function that executes a function given as a parameter on each element of an array.
 
 ## Favorite Task Quotes
+1.  If you spend too much time thinking about a thing, you'll never get it done
 
 ## Extra
