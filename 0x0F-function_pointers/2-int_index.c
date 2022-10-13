@@ -10,12 +10,21 @@
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {
-	unsigned int i, j
+	int i, temp;
+	
+	i = 0;
 	if (size <= 0)
 		return (-1);
 
-	for (i = 0; i < size; i++)
+	while (i < size)
 	{
-		while (j < size)
+		temp = cmp(array[i]);
+		if (temp != 0)
+		{
+			return (i);
+		}
+		i++;
 	}
+
+	return (-1);
 }
