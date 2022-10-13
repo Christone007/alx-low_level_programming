@@ -12,7 +12,8 @@ int main(int argc, char *argv[])
 	int a, b;
 	int (*calc)(int, int);
 
-/*	int i;
+/**
+*	int i;
 *	i = 0;
 *	while (i < argc)
 *	{
