@@ -13,9 +13,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	unsigned int count;
 	char *str;
 
-	if (n < 1)
-		return;
-
 	va_start(ap, n);
 
 	for (count = 0; count < n; count++)
