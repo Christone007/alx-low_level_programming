@@ -12,11 +12,6 @@ void print_numbers(const char *seperator, const unsigned int n, ...)
 	va_list ap;
 	unsigned int count;
 
-
-
-	if (n == NULL)
-		return;
-
 	if (n < 1)
 		return;
 
