@@ -1,0 +1,16 @@
+# VARIADIC FUNCTIONS
+Variadic functions are functions that can take a variable
+number and types of arguments. The number and type of arguments
+is not known by the function beforehand.
+
+Variadic functions are enabled by the C standard library header
+**stdargs.h**. This header provides types and macros that enable
+the use of variadic functions
+
+## Tasks
+0. Write a function that returns the sum of all its parameters
+
+## Favourite Task Quotes
+0. Beauty is variable, ugliness is constant
+
+## Extras
