@@ -8,9 +8,11 @@ Variadic functions are enabled by the C standard library header
 the use of variadic functions
 
 ## Tasks
-0. Write a function that returns the sum of all its parameters
+0. Write a function that returns the sum of all its parameters  
+1. Write a function that prints numbers, followed by a new line.
 
 ## Favourite Task Quotes
 0. Beauty is variable, ugliness is constant
+1. To be is to be the value of a variable
 
 ## Extras
