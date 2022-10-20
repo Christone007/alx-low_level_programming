@@ -1,6 +1,9 @@
 #ifndef LISTS_H
 #define LISTS_H
 
+#include <stddef.h>
+#include <stdio.h>
+
 /**
  * _putchar - writes the character c to stdout
  * @c: The char to write
