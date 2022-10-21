@@ -4,7 +4,7 @@ global _start
 
 section .rodata
 message: db "Hello, Holberton", 0xa
-message_len equ $-message
+message_len: equ $-message
 
 section .text
 _start:
