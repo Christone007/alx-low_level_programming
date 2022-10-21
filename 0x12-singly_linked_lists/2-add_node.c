@@ -6,7 +6,7 @@
  *
  * Return: The length of the string
  */
-unsigned int _strlen(char *str)
+unsigned int _strlen(const char *str)
 {
 	unsigned int i;
 
@@ -15,7 +15,7 @@ unsigned int _strlen(char *str)
 	{
 		i++;
 	}
-	
+
 	return (i);
 }
 
@@ -31,11 +31,13 @@ list_t *add_node(list_t **head, const char *str)
 
 	list_t *new;
 
-	new = (list_t) malloc(sizeof(list_t));
+	new = malloc(sizeof(list_t));
 
 	new->str = strdup(str);
 	new->len = _strlen(str);
-	new->next = &head;
+	new->next = *head;
 
-	head = new;
+	*head = new;
+
+	return (*head);
 }
