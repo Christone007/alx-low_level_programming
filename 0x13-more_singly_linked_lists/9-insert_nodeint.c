@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdio.h>
 
 /**
  * insert_nodeint_at_index - Inserts a node at a given index
@@ -22,14 +23,26 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	new_node->n = n;
 	new_node->next = NULL;
 
-	if (ptr == NULL && idx == 0)
+	if (ptr == NULL)
 	{
 		/*Insert new node at beginning*/
-		ptr = new_node;
-		return (ptr);
+		if (idx == 0)
+		{
+			printf("TRYING TO INSERT AT 0\n");
+			*head = new_node;
+			return (*head);
+		}
+		else
+			return (NULL);
 	}
-	else if (ptr == NULL && idx != 0)
-		return (NULL);
+
+	if (idx == 0)
+	{
+		printf("ENTERED IF IDX is 0\n");
+		new_node->next = *head;
+		*head = new_node;
+		return (*head);
+	}
 
 	i = 0;
 	while (ptr->next != NULL)
