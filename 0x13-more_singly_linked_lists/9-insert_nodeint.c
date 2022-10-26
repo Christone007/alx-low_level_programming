@@ -12,6 +12,7 @@ listint_t *insert_any_node(listint_t *anchor, listint_t *node)
 	if (anchor == NULL)
 	{
 		anchor = node;
+		return (anchor);
 	}
 	else if (anchor->next == NULL)
 	{
@@ -49,18 +50,19 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	if (ptr == NULL)
 	{
 		if (idx == 0)
-			return (insert_any_node(*head, new_node));
+		{
+			*head = new_node;
+			return (*head);
+		}
 		else
 			return (NULL);
 	}
-
 	if (idx == 0)
 	{
 		new_node->next = *head;
 		*head = new_node;
 		return (*head);
 	}
-
 	i = 0;
 	while (ptr->next != NULL)
 	{
