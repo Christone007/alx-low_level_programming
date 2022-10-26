@@ -28,7 +28,6 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		/*Insert new node at beginning*/
 		if (idx == 0)
 		{
-			printf("TRYING TO INSERT AT 0\n");
 			*head = new_node;
 			return (*head);
 		}
@@ -38,7 +37,6 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 
 	if (idx == 0)
 	{
-		printf("ENTERED IF IDX is 0\n");
 		new_node->next = *head;
 		*head = new_node;
 		return (*head);
