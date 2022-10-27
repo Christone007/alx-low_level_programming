@@ -12,10 +12,14 @@
 8. Write a function that returns the sum of all the data (n) of a listint_t linked list.
 9. Write a function that inserts a new node at a given position.
 10. Write a function that deletes the node at index index of a listint_t linked list.
-
-
-
+11. Write a function that reverses a listint_t linked list.
+12. Write a function that prints a listint_t linked list.
+13. Write a function that frees a listint_t list.
+14. Write a function that finds the loop in a linked list.
 
 ## Favourite Quotes
 
 ## Extras
+Floyd's Loop finding Algorithm is a WONDERFUL ONE. I enjoyed learning about it and using it to handle the last advanced task was a sweet experience!
+
+Found this [Geeksforgeeks resource](https://www.geeksforgeeks.org/detect-loop-in-a-linked-list/amp/) really helpful with dealing with tasks 11 - 14.
