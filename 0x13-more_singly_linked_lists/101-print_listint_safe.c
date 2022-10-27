@@ -51,6 +51,26 @@ unsigned int search_list(listptr_t *head, const listint_t *value)
 }
 
 /**
+ * free_listptr - Frees a list of pointers
+ * @head: The head of the list
+ *
+ * Return: void
+ */
+void free_listptr(listptr_t *head)
+{
+	listptr_t *ptr;
+
+	ptr = NULL;
+
+	while (head != NULL)
+	{
+		ptr = head;
+		head = head->next;
+		free(ptr);
+	}
+}
+
+/**
  * print_listint_safe - Prints a linked list
  * @head: The head of the list to print
  *
@@ -74,6 +94,7 @@ size_t print_listint_safe(const listint_t *head)
 		{
 			i++;
 			printf("-> [%p] %d\n", (void *)head, head->n);
+			free_listptr(ptrhead);
 			return (i);
 		}
 		else
@@ -86,5 +107,6 @@ size_t print_listint_safe(const listint_t *head)
 		head = head->next;
 	}
 
+	free_listptr(ptrhead);
 	return (98);
 }
