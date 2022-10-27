@@ -108,5 +108,5 @@ size_t print_listint_safe(const listint_t *head)
 	}
 
 	free_listptr(ptrhead);
-	return (98);
+	return (i);
 }
