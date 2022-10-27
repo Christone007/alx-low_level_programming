@@ -15,7 +15,7 @@ listptr_t *add_to_head(listptr_t *head, const listint_t *node)
 	if (ptr == NULL)
 		return (NULL);
 
-	ptr->nodeptr = node;
+	ptr->nodeptr = (void *)node;
 	ptr->next = NULL;
 
 	if (head == NULL)
