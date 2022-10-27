@@ -1,8 +1,8 @@
 #include "lists.h"
 
 /**
- * print_listint_safe - Prints a linked list
- * @head: The head of the list to print
+ * free_listint_safe - Prints a linked list
+ * @h: The head of the list to print
  *
  * Description: Can print a linked list that contains a loop
  *
