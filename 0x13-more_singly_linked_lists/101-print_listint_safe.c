@@ -3,7 +3,7 @@
 /**
  * add_to_head - Adds a node to the head of a list
  * @head: The list head
- * @value: The value to be stored in the new node
+ * @node: The value to be stored in the new node
  *
  * Return: void
  */
@@ -75,7 +75,7 @@ void free_listptr(listptr_t *head)
  * print_listint_safe - Prints a linked list
  * @head: The head of the list to print
  *
- * @Description: Can print a linked list that contains a loop
+ * Description: Can print a linked list that contains a loop
  *
  * Return: The number of nodes in the list
  */
