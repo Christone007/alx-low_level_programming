@@ -67,6 +67,7 @@ void free_listptr(listptr_t *head)
 		ptr = head;
 		head = head->next;
 		free(ptr);
+		ptr = NULL;
 	}
 }
 
@@ -92,7 +93,6 @@ size_t print_listint_safe(const listint_t *head)
 
 		if (found)
 		{
-			i++;
 			printf("-> [%p] %d\n", (void *)head, head->n);
 			free_listptr(ptrhead);
 			return (i);
