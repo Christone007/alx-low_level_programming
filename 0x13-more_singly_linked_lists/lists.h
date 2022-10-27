@@ -48,6 +48,7 @@ size_t free_listint_safe(listint_t **h);
 listptr_t *add_to_head(listptr_t *head, const listint_t *node);
 unsigned int search_list(listptr_t *head, const listint_t *value);
 void free_listptr(listptr_t *head);
+listint_t *find_listint_loop(listint_t *head);
 
 
 #endif /*LISTS_H*/
