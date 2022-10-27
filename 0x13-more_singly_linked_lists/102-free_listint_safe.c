@@ -23,8 +23,6 @@ size_t free_listint_safe(listint_t **h)
 
 		if (found)
 		{
-			free(*h);
-			*h = NULL;
 			free_listptr(ptrhead);
 			return (i);
 		}
