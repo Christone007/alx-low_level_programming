@@ -9,15 +9,6 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned long int ncopy;
-	unsigned int i;
-
-	i = 0;
-	ncopy = n;
-
-	while (ncopy >> i)
-		i++;
-
 	if (index >= (sizeof(unsigned long int) * 8))
 		return (-1);
 
