@@ -23,7 +23,7 @@ void print_binary(unsigned long int n)
 		}
 		else
 		{
-			if(print)
+			if (print)
 				_putchar(48);
 		}
 	}
