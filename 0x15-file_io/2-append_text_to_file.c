@@ -11,7 +11,7 @@
 int append_text_to_file(const char *filename, char *text_content)
 {
 	ssize_t text_length, bytes_written;
-	int fd;
+	int fd, cl;
 
 	if (filename == NULL)
 		return (-1);
@@ -47,6 +47,9 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (-1);
 	}
 
-	close(fd);
+	cl = close(fd);
+	if (cl == -1)
+		return (-1);
+
 	return (1);
 }
