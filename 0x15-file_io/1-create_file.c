@@ -26,7 +26,7 @@ int create_file(const char *filename, char *text_content)
 
 	if (text_content == NULL)
 	{
-		close (fd);
+		close(fd);
 		return (1);
 	}
 
@@ -37,11 +37,11 @@ int create_file(const char *filename, char *text_content)
 	bytes_written = write(fd, text_content, text_length);
 	if (bytes_written != text_length)
 	{
-		close (fd);
+		close(fd);
 		return (-1);
 	}
 
-	close (fd);
+	close(fd);
 
 	return (1);
 }
