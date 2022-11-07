@@ -31,7 +31,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	while (text_content[text_length] != '\0')
 		text_length++;
 
-	text_length += 1;
+	/*text_length += 1;*/
 
 	bytes_written = write(fd, text_content, text_length);
 
