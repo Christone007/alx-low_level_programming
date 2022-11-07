@@ -13,10 +13,10 @@ ssize_t read_textfile(const char *filename, size_t letters);
 int create_file(const char *filename, char *text_content);
 int append_text_to_file(const char *filename, char *text_content);
 
-/*typedef struct buff_s
+typedef struct buff_s
 {
 	char *buff;
-	buff_t *next;
-} buff_t;*/
+	struct buff_s *next;
+} buff_t;
 
 #endif /*MAIN_H*/
