@@ -30,8 +30,7 @@ void close_fd(int fd1, int fd2)
 		cl = close(fd1);
 		if (cl == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd1);
-			exit(100);
+			print_stderr_exit("Error: Can't close fd %d", 100, fd1);
 		}
 	}
 
@@ -40,9 +39,7 @@ void close_fd(int fd1, int fd2)
 		cl = close(fd2);
 		if (cl == -1)
 		{
-
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd2);
-			exit(100);
+			print_stderr_exit("Error: Can't close fd %d", 100, fd2);
 		}
 	}
 }
@@ -78,20 +75,19 @@ int main(int argc, char **argv)
 		print_stderr_exit("Error: Can't write to %s\n", 99, file_to);
 	}
 	buffer = malloc(1024);
+
 	do {
 		bytes_read = read(fd_from, buffer, 1024);
 		if (bytes_read == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 			close_fd(fd_from, fd_to);
-			exit(98);
+			print_stderr_exit("Error: Can't read from file %s\n", 98, file_from);
 		}
 		bytes_written = write(fd_to, buffer, bytes_read);
 		if (bytes_written == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 			close_fd(fd_from, fd_to);
-			exit(99);
+			print_stderr_exit("Error: Can't write to %s\n", 99, file_to);
 		}
 	} while (bytes_read > 0);
 	close_fd(fd_from, fd_to);
