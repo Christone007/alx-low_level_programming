@@ -148,3 +148,56 @@ int _setenv(const char *name, const char *value, int overwrite)
 
 	return (-1);
 }
+
+/**
+ * _unsetenv - Deletes a variable from the environment
+ * @name: The name of the variable to delete
+ *
+ * Return: 0 (success), -1 (Error)
+ */
+int _unsetenv(const char *name)
+{
+	char **new_environ;
+	int matched_index, i = 0, j = 0;
+
+	if (_getenv(name) == NULL)
+		return (0);
+
+	else
+	{
+		new_environ = malloc(sizeof(char *) * array_size(environ) - 1);
+		matched_index = get_match_index(name);
+
+		/*copy array but skip matched index*/
+		while (environ[i] != NULL)
+		{
+			if (i == matched_index)
+			{
+				i++;
+				continue;
+			}
+
+			new_environ[j] = environ[i];
+			i++;
+			j++;
+		}
+
+		new_environ[j] = NULL;
+		environ = new_environ;
+		new_environ = NULL;
+
+		return (0);
+	}
+
+	return (-1);
+}
+
+
+
+
+
+
+
+
+
+

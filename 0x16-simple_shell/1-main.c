@@ -45,5 +45,14 @@ int main(void)
 		printf("%s\n", environ[i]);
 		i++;
 	}
+
+	printf("\n UNSET THE LANG and LUNG ENVIRONMENT VARIABLE\n");
+	_unsetenv("LANG");
+	_unsetenv("LUNG");
+
+	
+	printf("FINAL ENVIRONMENT\n\n");
+	_printenv();
+
 	return (0);
 }

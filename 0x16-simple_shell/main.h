@@ -27,6 +27,7 @@ int get_match_index(const char *name);
 char *_getenv(const char *name);
 void _printenv(void);
 int _setenv(const char *name, const char *value, int overwrite);
+int _unsetenv(const char *name);
 
 /*Array Functions*/
 int array_size(char **arr);
