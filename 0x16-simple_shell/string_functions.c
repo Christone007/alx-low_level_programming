@@ -158,5 +158,34 @@ char **split_str(char *str, char delim)
  */
 char *str_concat_char(const char *str1, char c, const char *str2)
 {
-	
+	char *new_string;
+	unsigned int str1_len, str2_len, i = 0, j = 0;
+
+	str1_len = str_len(str1);
+	str2_len = str_len(str2);
+
+	new_string = malloc(sizeof(char) * (str1_len + str2_len + 2));
+	if (new_string == NULL)
+	{
+		return (NULL);
+	}
+
+	while (str1[i] != '\0')
+	{
+		new_string[i] = str1[i];
+		i++;
+	}
+
+	new_string[i] = c;
+	i++;
+
+	while (str2[j] != '\0')
+	{
+		new_string[i + j] = str2[j];
+		j++;
+	}
+
+	new_string[i + j] = '\0';
+
+	return (new_string);
 }
