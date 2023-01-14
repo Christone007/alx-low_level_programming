@@ -51,7 +51,7 @@ typedef struct HashTable {
 
 
 //FUNCTION PROTOTYPES
-void handle_collision(HashTable* table, unsigned long index, Ht_item* item)
+void handle_collision(HashTable* table, unsigned long index, Ht_item* item);
 void ht_insert(HashTable* table, char* key, char* value);
 void ht_delete(HashTable* table, char* key);
 char* ht_search(HashTable* table, char* key);
@@ -67,7 +67,6 @@ LinkedList* linkedlist_insert(LinkedList* list, Ht_item* item);
 void print_list(LinkedList* list);
 Ht_item* linkedlist_remove(LinkedList* list);
 void free_linkedlist(LinkedList* list);
-void print_list(LinkedList* list);
 LinkedList** create_overflow_buckets(HashTable* table);
 void free_overflow_buckets(HashTable* table);
 

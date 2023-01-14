@@ -1,4 +1,4 @@
-#include "htable_header.c"
+#include "htable_header.h"
 
 
 /**
