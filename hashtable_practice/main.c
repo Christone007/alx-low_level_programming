@@ -9,6 +9,7 @@ int main() {
     ht_insert(ht, "TMx", "Fifth address");
     ht_insert(ht, "Bmi", "Sixth address");
     ht_insert(ht, "Alx", "Coding School");
+    ht_insert(ht, "HYx", "Extra Collision");
     print_search(ht, "1");
     print_search(ht, "2");
     print_search(ht, "3");
@@ -17,7 +18,7 @@ int main() {
     print_search(ht, "Cau");  // Collisions!
     print_table(ht);
     ht_delete(ht, "1");
-    ht_delete(ht, "TMx");
+    ht_delete(ht, "Cau");
     print_table(ht);
     free_table(ht);
     return 0;
