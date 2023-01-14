@@ -12,12 +12,23 @@ void handle_collision(HashTable* table, unsigned long index, Ht_item* item)
 {
 	LinkedList* head = table->overflow_buckets[index];
 
+	//If it is a first time collision, overflow bucket is empty
 	if (head == NULL)
 	{
+		head = allocate_list();
+		head->item = item;
+		table->overflow_buckets[index] = head;
 
+		return;
 	}
-
+	else
+	{
+		//Add to an existing overflow_bucket
+		table->overflow_buckets[index] = linkedlist_insert(head, item);
+		return;
+	}
 }
+
 
 /**
  * ht_insert - Inserts a new hashtable item into the hash
@@ -87,23 +98,107 @@ char* ht_search(HashTable* table, char* key)
 	int index = hash_function(key);
 
 	Ht_item* current_item = table->items[index];
+	LinkedList* head = table->overflow_buckets[index];
 
-	if (current_item != NULL)
+	while (current_item != NULL)
 	{
 		//check if the key is the same
 		if (strcmp(current_item->key, key) == 0)
 			return current_item->value;
-		else
-		{
-			//THERE MUST HAVE BEEN A COLLISION
-			//See how collision is resolved first
+		if (head == NULL)
 			return NULL;
-		}
+
+		//THERE MUST HAVE BEEN A COLLISION
+		current_item = head->item;
+		head = head->next;
 	}
-	else
-		return NULL;
+	return NULL;
 }
 
+
+/**
+ * ht_delete - Deletes an item from a HashTable
+ * @table: The HashTable
+ * @key: The key of the item to delete
+ *
+ * Return: void
+ */
+void ht_delete(HashTable* table, char* key)
+{
+	int index = hash_function(key);
+
+	Ht_item* item = table->items[index];
+
+	LinkedList* head = table->overflow_buckets[index];
+
+	if (item == NULL)
+	{
+		//bucket is empty, invalid key
+		return;
+	}
+	else
+	{
+		if (head == NULL && strcmp(item->key, key) == 0)
+		{
+			//Overflow does not exist.
+			//bucket contains the item, delete it
+			table->items[index] = NULL;
+			free_item(item);
+			table->count--;
+			return;
+		}
+		else if (head != NULL)
+		{
+			//overflow exitst
+			//check if Items array match item
+			if (strcmp(item->key, key) == 0)
+			{
+				//a match was found in the items array
+				//Remove it and set head of list there
+				free_item(item);
+				LinkedList *node = head;
+				head = head->next;
+				node->next = NULL;
+				table->items[index] = create_item(node->item->key, node->item->value);
+				free_linkedlist(node);
+				table->overflow_buckets[index] = head;
+				return;
+			}
+
+			//check the overflow for a match
+			LinkedList* curr = head;
+			LinkedList* prev = NULL;
+
+			while (curr)
+			{
+				if (strcmp(curr->item->key, key) == 0)
+				{
+					if (prev == NULL)
+					{//it is the first node
+
+						//TODO: No need to free the
+						//entire list, remove only the
+						//matched element
+						free_linkedlist(head);
+						table->overflow_buckets[index] = NULL;
+						return;
+					}
+					else
+					{//The match is elsewhere in the overflow
+						prev->next = curr->next;
+						curr->next = NULL;
+						free_linkedlist(curr);
+						table->overflow_buckets[index] = head;
+						return;
+					}
+				}
+				curr = curr->next;
+				prev = curr;
+			}
+
+		}
+	}
+}
 
 /**
  * print_search - Prints the search result
