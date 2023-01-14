@@ -179,13 +179,19 @@ void ht_delete(HashTable* table, char* key)
 						//TODO: No need to free the
 						//entire list, remove only the
 						//matched element
-						free_linkedlist(head);
-						table->overflow_buckets[index] = NULL;
+
+						//free_linkedlist(head);
+						//table->overflow_buckets[index] = NULL;
+						prev = curr->next;
+						curr->next = NULL;
+						free_linkedlist(curr);
+						table->overflow_buckets[index] = prev;
+
 						return;
 					}
 					else
 					{//The match is elsewhere in the overflow
-						prev->next = curr->next;
+						prev = curr->next;
 						curr->next = NULL;
 						free_linkedlist(curr);
 						table->overflow_buckets[index] = head;
