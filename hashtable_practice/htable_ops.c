@@ -166,7 +166,6 @@ void ht_delete(HashTable* table, char* key)
 			}
 
 			//check the overflow for a match
-			LinkedList* head = table->overflow_buckets[index];
 			LinkedList* curr = head;
 			LinkedList* prev = NULL;
 
@@ -186,7 +185,6 @@ void ht_delete(HashTable* table, char* key)
 					}
 					else
 					{//The match is elsewhere in the overflow
-						printf("Match was found elsewhere\n");
 						prev->next = curr->next;
 						curr->next = NULL;
 						free_linkedlist(curr);
@@ -232,24 +230,23 @@ void print_search(HashTable* table, char* key)
  */
 void print_table(HashTable* table)
 {
-	printf("\n\nHASH TABLE\n-----------------------------------------\n");
-	printf("Index	| Key		| Value		|\n");
+	printf("\n====================================\nHASH TABLE\n====================================\n");
+	printf("Index	| Key		| Value		\n");
 	printf("-----------------------------------------");
 	for (int i = 0; i < table->size; i++)
 	{
 		if (table->items[i] != NULL)
 		{
-			printf("\n%d	|%s		| %s|", i, table->items[i]->key, table->items[i]->value);
+			printf("\n%d	|%s		| %s", i, table->items[i]->key, table->items[i]->value);
 			if (table->overflow_buckets[i])
 			{
-				printf("=> Overflow Buket = > ");
-				printf("-----------OVERFLOW-----------\n");
-				printf("\t\t\t\t\t\t\t\t KEY\t|VALUE \n");
-				printf("\t\t\t\t\t\t\t\t------------------------------\n");
+				printf(">>>-----------OVERFLOW-----------\n");
+				printf("       \t\t\t\t\t KEY\t|VALUE \n");
+				printf("       \t\t\t\t\t------------------------------");
 				LinkedList* head = table->overflow_buckets[i];
 				while(head)
 				{
-					printf("\n\t\t\t\t\t\t\t\tKey:%s \t|Value:%s", head->item->key, head->item->value);
+					printf("\n       \t\t\t\t\tKey:%s \t|Value:%s", head->item->key, head->item->value);
 					head = head->next;
 				}
 			}
