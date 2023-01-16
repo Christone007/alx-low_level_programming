@@ -4,7 +4,7 @@
 /**
  * key_index - Modifies a hash result to get an index
  * @key: The key to be hashed
- * @size: The size of the hashmap 
+ * @size: The size of the hashmap
  *
  * Description: The index to be returned cannot be > 'size'
  *
