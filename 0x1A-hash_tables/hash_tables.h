@@ -44,5 +44,6 @@ void resolve_collision(hash_node_t **current_node, hash_node_t *node);
 hash_node_t *create_node(const char *key, const char *value);
 void print_hash_table(hash_table_t *ht);
 char *hash_table_get(const hash_table_t *ht, const char *key);
+void hash_table_print(const hash_table_t *ht);
 
 #endif /*HASH_H*/
