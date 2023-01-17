@@ -21,12 +21,14 @@ void hash_table_print(const hash_table_t *ht)
 	{
 		current = ht->array[index];
 
-		if (current != NULL)
+		while (current != NULL)
 		{
 			if (empty == 1)
 				printf(", ");
 			printf("'%s': '%s'", current->key, current->value);
 			empty = 1;
+
+			current = current->next;
 		}
 
 		index++;
