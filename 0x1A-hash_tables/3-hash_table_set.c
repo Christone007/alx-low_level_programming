@@ -28,7 +28,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	/*Get the node in that index*/
 	current_node = ht->array[index];
 
-	/*Virgin node*/
 	if (current_node == NULL)
 	{
 		ht->array[index] = new_node;
