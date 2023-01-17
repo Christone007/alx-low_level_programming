@@ -21,25 +21,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (key == NULL)
 		return (0);
 
-	/*Get index*/
+	/*Get index and create new node*/
 	index = key_index((unsigned char *)key, ht->size);
-	
-	/*Create new node*/
-	new_node = malloc(sizeof(hash_node_t));
-	if (new_node == NULL)
-		return (0);
-
-	new_node->key = malloc(strlen(key) + 1);
-	if (new_node->key == NULL)
-		return (0);
-	new_node->value = malloc(strlen(value) + 1);
-	if (new_node->value == NULL)
-		return (0);
-
-	strcpy(new_node->key, key);
-	strcpy(new_node->value, value);
-
-	new_node->next = NULL;
+	new_node = create_node(key, value);
 
 	/*Get the node in that index*/
 	current_node = ht->array[index];
@@ -70,6 +54,38 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 }
 
+
+/**
+ * create_node - Creates a new node
+ * @key: The key of the new node
+ * @value: The value stored in the new node
+ *
+ * Return: A pointer to a new node
+ */
+hash_node_t *create_node(const char *key, const char *value)
+{
+	hash_node_t *new_node;
+
+	/*Create new node*/
+	new_node = malloc(sizeof(hash_node_t));
+	if (new_node == NULL)
+		return (0);
+
+	new_node->key = malloc(strlen(key) + 1);
+	if (new_node->key == NULL)
+		return (0);
+
+	new_node->value = malloc(strlen(value) + 1);
+	if (new_node->value == NULL)
+		return (0);
+
+	strcpy(new_node->key, key);
+	strcpy(new_node->value, value);
+
+	new_node->next = NULL;
+
+	return (new_node);
+}
 
 /**
  * resolve_collision - Resolve a collision in a hashmap
