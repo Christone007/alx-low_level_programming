@@ -14,7 +14,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int index;
 	hash_node_t *new_node;
 	hash_node_t *current_node;
-	int resolution_type;
 
 	/*Check edge cases*/
 	if (ht == NULL)
@@ -41,7 +40,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (current_node == NULL)
 	{
 		ht->array[index] = new_node;
-		printf("Inserted a New node\n");
 		return (1);
 	}
 
@@ -52,18 +50,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		if (strcmp(current_node->key, key) == 0)
 		{
 			current_node->value = (char *)value;
-			printf("\n\nUpdated the node with key: %s\n", key);
 			return (1);
 		}
 		else
 		{
 			/*chain new value or update chained value*/
-			resolution_type = resolve_collision(current_node, new_node);
-			if (resolution_type == 2)
-				printf("\n\nUpdated a chained node\n");
-			if (resolution_type == 1)
-				printf("\n\nChained a new node\n");
-
+			resolve_collision(&(ht->array[index]), new_node);
 			return (1);
 		}
 	}
@@ -78,23 +70,22 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
  *
  * Return: 1 if new node was chained. 2 if chained node was updated
  */
-int resolve_collision(hash_node_t *current_node, hash_node_t *node)
+void resolve_collision(hash_node_t **current_node, hash_node_t *node)
 {
-	hash_node_t *prev_node;
+	hash_node_t *ptr;
 
-	prev_node = NULL;
+	ptr = *current_node;
 
-	while (current_node != NULL)
+	while (ptr != NULL)
 	{
-		if (strcmp(current_node->key, node->key) == 0)
+		if (strcmp(ptr->key, node->key) == 0)
 		{
-			current_node->value = node->value;
-			return (2);
+			ptr->value = node->value;
+			return;
 		}
-		prev_node = current_node;
-		current_node = current_node->next;
+		ptr = ptr->next;
 	}
 
-	prev_node->next = node;
-	return (1);
+	node->next = (*current_node);
+	(*current_node) = node;
 }
