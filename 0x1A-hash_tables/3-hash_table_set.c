@@ -29,8 +29,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (new_node == NULL)
 		return (0);
 
-	new_node->key = (char *)key;
-	new_node->value = (char *)value;
+	new_node->key = malloc(strlen(key) + 1);
+	if (new_node->key == NULL)
+		return (0);
+	new_node->value = malloc(strlen(value) + 1);
+	if (new_node->value == NULL)
+		return (0);
+
+	strcpy(new_node->key, key);
+	strcpy(new_node->value, value);
+
 	new_node->next = NULL;
 
 	/*Get the node in that index*/
