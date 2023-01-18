@@ -24,20 +24,17 @@ void hash_table_delete(hash_table_t *ht)
 				temp = current_node;
 				temp = current_node->next;
 				current_node->next = NULL;
-				printf("Current_node: %s\n", current_node->key);
+
 				free(current_node->key);
 				free(current_node->value);
 				free(current_node);
-				printf("Inner Node delete\n");
+
 				current_node = temp;
 			}
-			printf("Current_node: %s\n", current_node->key);
 			free(current_node->key);
 			free(current_node->value);
 			free(current_node);
-			printf("Node deleted\n");
 		}
-
 		index++;
 	}
 
