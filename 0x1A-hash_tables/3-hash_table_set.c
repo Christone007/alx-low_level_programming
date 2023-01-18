@@ -40,7 +40,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		/*Update value*/
 		if (strcmp(current_node->key, key) == 0)
 		{
-			current_node->value = (char *)value;
+			strcpy(current_node->value, value);
+			free(new_node->key);
+			free(new_node->value);
+			free(new_node);
 			return (1);
 		}
 		else
@@ -91,7 +94,7 @@ hash_node_t *create_node(const char *key, const char *value)
  * @current_node: The index node
  * @node: The new node to add
  *
- * Return: 1 if new node was chained. 2 if chained node was updated
+ * Return: void
  */
 void resolve_collision(hash_node_t **current_node, hash_node_t *node)
 {
@@ -103,7 +106,10 @@ void resolve_collision(hash_node_t **current_node, hash_node_t *node)
 	{
 		if (strcmp(ptr->key, node->key) == 0)
 		{
-			ptr->value = node->value;
+			strcpy(ptr->value, node->value);
+			free(node->key);
+			free(node->value);
+			free(node);
 			return;
 		}
 		ptr = ptr->next;
