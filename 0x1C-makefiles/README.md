@@ -1,0 +1,3 @@
+# MAKEFILES
+
+Makefiles are files that enable us to automate tasks as they relate to file creatt and compilation and a lot more...
