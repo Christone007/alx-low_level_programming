@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines a function to calculate the perimeter of an island"""
 
+
 def count_free_edges(line):
     """Counts the side free edges of a given strip of land area"""
     edge = 0
@@ -55,7 +56,6 @@ def island_perimeter(grid):
     """Count free Horizontal edges"""
     for horizontal_strip in grid:
         horizontal_edges += count_free_edges(horizontal_strip)
-    
 
     """Count free Vertical edges"""
     for i in range(len(grid[0])):
