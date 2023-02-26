@@ -1,6 +1,35 @@
 #!/usr/bin/python3
 """Defines a function to calculate the perimeter of an island"""
 
+def count_free_edges(line):
+    """Counts the side free edges of a given strip of land area"""
+    edge = 0
+    line_len = len(line)
+
+    for i in range(line_len):
+        if i == 0:
+            """First cell"""
+            if line[i] == 1:
+                edge += 1
+                if line[i + 1] == 0:
+                    edge += 1
+        elif i == line_len - 1:
+            """Last cell"""
+            if line[i] == 1:
+                if line[i - 1] == 0:
+                    edge += 2
+                else:
+                    edge += 1
+        else:
+            """Every other cell"""
+            if line[i] == 1:
+                if line[i - 1] == 0:
+                    edge += 1
+                if line[i + 1] == 0:
+                    edge += 1
+    return edge
+
+
 def island_perimeter(grid):
     """Calculates an island's perimeter"""
     if type(grid) is not list:
@@ -19,29 +48,21 @@ def island_perimeter(grid):
         print("The area should not be longer or wider than 100 units")
         return (-1)
 
-    land_len = 0
-    prev_land_len = 0
-    land_edge = 2
     perimeter = 0
+    vertical_edges = 0
+    horizontal_edges = 0
 
-    for land_strip in grid:
-        """Count land_len"""
-        land_len = land_strip.count(1)
+    """Count free Horizontal edges"""
+    for horizontal_strip in grid:
+        horizontal_edges += count_free_edges(horizontal_strip)
+    
 
-        if land_len == 0:
-            land_edge = 0
-        else:
-            land_edge = 2
+    """Count free Vertical edges"""
+    for i in range(len(grid[0])):
+        vertical_strip = []
+        for line in grid:
+            vertical_strip.append(line[i])
+        vertical_edges += count_free_edges(vertical_strip)
 
-        """update perimeter"""
-        diff = land_len - prev_land_len
-
-        if diff < 0:
-            diff *= -1
-
-        perimeter += diff + land_edge
-
-        """update prev"""
-        prev_land_len = land_len
-
-    return (perimeter)
+    perimeter = horizontal_edges + vertical_edges
+    return perimeter
