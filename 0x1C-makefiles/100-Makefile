@@ -5,6 +5,7 @@ NAME=school
 CFLAGS=-Wall -Werror -Wextra -pedantic
 
 .PHONY: all
+.DELETE_ON_ERROR:
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
