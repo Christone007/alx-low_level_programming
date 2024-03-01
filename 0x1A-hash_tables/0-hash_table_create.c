@@ -16,7 +16,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	if (table == NULL)
 		return (NULL);
 
-	/*save the table size*/
+	/*save the table size */
 	table->size = size;
 
 	/*allocate memory for the array*/
